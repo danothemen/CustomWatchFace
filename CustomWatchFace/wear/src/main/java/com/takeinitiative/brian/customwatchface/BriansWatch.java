@@ -21,9 +21,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -94,6 +97,9 @@ public class BriansWatch extends CanvasWatchFaceService {
          */
         boolean mLowBitAmbient;
 
+        //Bitmap For Image
+        Bitmap background;
+
         @Override
         public void onCreate(SurfaceHolder holder) {
             super.onCreate(holder);
@@ -108,6 +114,9 @@ public class BriansWatch extends CanvasWatchFaceService {
 
             mBackgroundPaint = new Paint();
             mBackgroundPaint.setColor(resources.getColor(R.color.analog_background));
+
+            Drawable backgroundDrawable = resources.getDrawable(R.drawable.seinfeld, null);
+            background = ((BitmapDrawable) backgroundDrawable).getBitmap();
 
             mHandPaint = new Paint();
             mHandPaint.setColor(resources.getColor(R.color.analog_hands));
@@ -159,8 +168,14 @@ public class BriansWatch extends CanvasWatchFaceService {
             int width = bounds.width();
             int height = bounds.height();
 
-            // Draw the background.
-            canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), mBackgroundPaint);
+            // Draw the background, scaled to fit.
+            if (background == null
+                    || background.getWidth() != width
+                    || background.getHeight() != height) {
+                background = Bitmap.createScaledBitmap(background,
+                        width, height, true);
+            }
+            canvas.drawBitmap(background, 0, 0, null);
 
             // Find the center. Ignore the window insets so that, on round watches with a
             // "chin", the watch face is centered on the entire screen, not just the usable
