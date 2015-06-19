@@ -164,7 +164,7 @@ public class BriansWatch extends CanvasWatchFaceService {
                             R.drawable.littlejerry,R.drawable.majiclugie,R.drawable.manzierre,R.drawable.moops,R.drawable.negli,
                             R.drawable.nosoup,R.drawable.nosoupforyou,R.drawable.outthere,R.drawable.pirate,R.drawable.potatoesalad,
                             R.drawable.pretzels,R.drawable.reserve,R.drawable.seinfeld,R.drawable.seinfeldrun,R.drawable.serenitynow,
-                            R.drawable.titleist,R.drawable.vandelay,R.drawable.babu};
+                            R.drawable.titleist,R.drawable.vandelay,R.drawable.babu,R.drawable.bigsalad, R.drawable.kenny};
             int numPics = watchbacks.length;
 
             background = ((BitmapDrawable) backgroundDrawable).getBitmap();
@@ -223,7 +223,7 @@ public class BriansWatch extends CanvasWatchFaceService {
             int width = bounds.width();
             int height = bounds.height();
 
-            backgroundDrawable = resources.getDrawable(watchbacks[29],null);
+            backgroundDrawable = resources.getDrawable(watchbacks[31],null);
             background = ((BitmapDrawable)backgroundDrawable).getBitmap();
 
             // Draw the background, scaled to fit.
