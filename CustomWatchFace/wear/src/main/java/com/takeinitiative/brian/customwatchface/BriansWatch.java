@@ -158,7 +158,7 @@ public class BriansWatch extends CanvasWatchFaceService {
             Drawable watchFaceDrawable = resources.getDrawable(R.drawable.watchface, null);
 
             watchbacks = new int[]
-                    {R.drawable.bo,R.drawable.costanza,R.drawable.doubledib,R.drawable.elaindancing,R.drawable.elainebenes,R.drawable.festivus,R.drawable.festivuss,R.drawable.hqdefault,R.drawable.ivegotit,R.drawable.juniormint,R.drawable.kramerkill,R.drawable.kramerportrait,R.drawable.littlejerry,R.drawable.majiclugie,R.drawable.manzierre,R.drawable.moops,R.drawable.negli,R.drawable.nosoup,R.drawable.nosoupforyou,R.drawable.outthere,R.drawable.pirate,R.drawable.potatoesalad,R.drawable.pretzels,R.drawable.reserve,R.drawable.seinfeld,R.drawable.seinfeldrun,R.drawable.serenitynow,R.drawable.titleist,R.drawable.url,R.drawable.vandelay};
+                    {R.drawable.bo,R.drawable.costanza,R.drawable.doubledib,R.drawable.elaindancing,R.drawable.elainebenes,R.drawable.festivus,R.drawable.festivuss,R.drawable.hqdefault,R.drawable.ivegotit,R.drawable.juniormint,R.drawable.kramerkill,R.drawable.kramerportrait,R.drawable.littlejerry,R.drawable.majiclugie,R.drawable.manzierre,R.drawable.moops,R.drawable.negli,R.drawable.nosoup,R.drawable.nosoupforyou,R.drawable.outthere,R.drawable.pirate,R.drawable.potatoesalad,R.drawable.pretzels,R.drawable.reserve,R.drawable.seinfeld,R.drawable.seinfeldrun,R.drawable.serenitynow,R.drawable.titleist,R.drawable.vandelay,R.drawable.babu,R.drawable.bigsalad};
             int numPics = watchbacks.length;
 
             background = ((BitmapDrawable) backgroundDrawable).getBitmap();
@@ -217,7 +217,7 @@ public class BriansWatch extends CanvasWatchFaceService {
             int width = bounds.width();
             int height = bounds.height();
 
-            backgroundDrawable = resources.getDrawable(watchbacks[6],null);
+            backgroundDrawable = resources.getDrawable(watchbacks[29],null);
             background = ((BitmapDrawable)backgroundDrawable).getBitmap();
 
             // Draw the background, scaled to fit.
